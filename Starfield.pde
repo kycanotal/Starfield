@@ -1,7 +1,7 @@
 //your code here
 void setup()
 {
-	//your code here
+	size(900,900);//your code here
 }
 void draw()
 {
@@ -9,7 +9,16 @@ void draw()
 }
 class NormalParticle
 {
-	//your code here
+	double myX,myY,myAngle,mySpeed;
+	int myColor;
+
+		public NormalParticle() {
+		myX = 250;
+		myY = 250;
+		myAngle = Math.random() * 2 * Math.PI;
+		mySpeed = Math.random() * 10;
+		myColor = color(255);
+		}//your code here
 }
 interface Particle
 {
