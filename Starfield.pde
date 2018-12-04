@@ -1,24 +1,34 @@
-//your code here
+
+NormalParticle Star = new NormalParticle();//your code here
 void setup()
 {
-	size(900,900);//your code here
+	size(500,500);//your code here
 }
 void draw()
 {
-	//your code here
+	Star.move();
+	Star.show();//your code here
 }
 class NormalParticle
 {
 	double myX,myY,myAngle,mySpeed;
 	int myColor;
 
-		public NormalParticle() {
+	public NormalParticle() {
 		myX = 250;
 		myY = 250;
 		myAngle = Math.random() * 2 * Math.PI;
 		mySpeed = Math.random() * 10;
 		myColor = color(255);
-		}//your code here
+	}
+	public void move() {
+		myX = Math.cos(myAngle)*mySpeed + myX;
+		myY = Math.sin(myAngle)*mySpeed + myY;
+	}
+	public void show() {
+		ellipse((int)myX, (int)myY, 10,10);
+	}
+	//your code here
 }
 interface Particle
 {
