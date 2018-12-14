@@ -1,15 +1,19 @@
 
-NormalParticle Star = new NormalParticle();//your code here
+NormalParticle [] Star = new NormalParticle[100];//your code here
 void setup()
 {
-	size(500,500);//your code here
+	size(500,500);
+	for(int i = 0; i < Star.length; i++)
+		Star[i] = new NormalParticle();//your code here
 }
 void draw()
 {
-	Star.move();
-	Star.show();//your code here
+	for(int i = 0; i < Star.length; i++)
+	{Star[i].move();
+	 Star[i].show();
+	}//your code here
 }
-class NormalParticle
+class NormalParticle implements Particle
 {
 	double myX,myY,myAngle,mySpeed;
 	int myColor;
@@ -32,11 +36,13 @@ class NormalParticle
 }
 interface Particle
 {
-	//your code here
+	public void show();
+	public void move();//your code here
 }
-class OddballParticle //uses an interface
+class OddballParticle implements Particle//uses an interface
 {
-	//your code here
+	myX = myX + (int) (Math.random() * 5) - 2);
+	myY = myY + (int) (Math.random() * 5) - 2);//your code here
 }
 class JumboParticle //uses inheritance
 {
