@@ -41,8 +41,25 @@ interface Particle
 }
 class OddballParticle implements Particle//uses an interface
 {
+	public OddballParticle () {
+	myX = 200;
+	myY = 200;
+	myAngle = Math.random() * 2 * Math.PT;
+	mySpeed = Math.random() * 10;
+	myColor = color(100,200,150);
+	}
+
+	public void move() {
 	myX = myX + (int) (Math.random() * 5) - 2);
-	myY = myY + (int) (Math.random() * 5) - 2);//your code here
+	myY = myY + (int) (Math.random() * 5) - 2);
+	}
+	public void show() {
+		ellipse((int)myX, (int)myY, 30,30);
+		rect((int)myX,(int)myY,(int),(int)myX + 50,(int)myY,(int)myX,int()myY + 30,(int)myX + 50,(int)myY + 30);
+	}
+
+
+	//your code here
 }
 class JumboParticle //uses inheritance
 {
